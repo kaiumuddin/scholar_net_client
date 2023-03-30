@@ -1,32 +1,51 @@
-import { Button } from "@material-ui/core";
+import { Dropdown, Navbar } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
+// import img from "../../../Assets/Images";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
-      <nav>
-        <Button component={Link} to="/">
+    <Navbar className="uppercase container max-w-screen-2xl mx-auto">
+      <div className="flex lg:hidden">
+        <Dropdown arrowIcon={false} inline={true}></Dropdown>
+        <Navbar.Toggle />
+      </div>
+
+      <Navbar.Brand href="/">
+        {/* <img src={img} className="mr-3 h-6 sm:h-9" alt="ScholarNet Logo" /> */}
+        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+          ScholarNet
+        </span>
+      </Navbar.Brand>
+
+      <Navbar.Collapse>
+        <Navbar.Link as={Link} to="/">
           Home
-        </Button>
-        <Button component={Link} to="/videos">
+        </Navbar.Link>
+        <Navbar.Link as={Link} to="/videos">
           Videos
-        </Button>
-        <Button component={Link} to='/courses'>
+        </Navbar.Link>
+        <Navbar.Link as={Link} to="/courses">
           Courses
-        </Button>
-        <Button component={Link} to="/Books">
+        </Navbar.Link>
+        <Navbar.Link as={Link} to="/books">
           Books
-        </Button>
-        <Button component={Link} to="/blogs">
+        </Navbar.Link>
+        <Navbar.Link as={Link} to="/blogs">
           Blogs
-        </Button>
-        <Button component={Link} to="/groups">
+        </Navbar.Link>
+        <Navbar.Link as={Link} to="/groups">
           Groups
-        </Button>
-      </nav>
-    </div>
+        </Navbar.Link>
+      </Navbar.Collapse>
+
+      <Navbar.Collapse>
+        <Navbar.Link as={Link} to="/profile">
+          Profile
+        </Navbar.Link>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
