@@ -1,5 +1,5 @@
 import React from 'react';
-import front_fuger2 from '../../../../Assets/frnd-figure2.jpg';
+import front_fuger2 from '../../../Assets/frnd-figure2.jpg';
 import './Suggestion.css'
 
 const Suggestion = () => {
@@ -10,7 +10,7 @@ const Suggestion = () => {
                 <div className='bg-white border rounded-md'>
                     <div className='w-full suggestion rounded-md'>
                         <div className='pt-16 relative left-6 bottom-[-35px] z-10 flex justify-between items-center'>
-                            <img class="w-20 rounded-full border-white border-2" src={front_fuger2} alt="Rounded avatar" />
+                            <img className="w-20 rounded-full border-white border-2" src={front_fuger2} alt="Rounded avatar" />
                             <p className='flex justify-end text-gray-100 font-semibold pr-8 pb-7 '>Member 505k</p>
                         </div>
                     </div>

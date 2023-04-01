@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './RightContent.css';
-import Group from './Groupe/Group';
-import Suggestion from './Suggestion/Suggestion';
-import AskQuestion from './AskQuestion/AskQuestion';
-import EventExplore from './EventExplore/EventExplore';
+import Group from '../../Shared/Groupe/Group';
+import Suggestion from '../../Shared/Suggestion/Suggestion';
+import AskQuestion from '../../Shared/AskQuestion/AskQuestion';
+import EventExplore from '../../Shared/EventExplore/EventExplore';
 
 const RightContent = () => {
     return (
