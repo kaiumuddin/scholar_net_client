@@ -12,14 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.body::-webkit-scrollbar{
-width: 14px;
-background-color: blue;
-}
-.body::-webkit-scrollbar-thumb{
-background-color: lime;
-border-radius: 10px;
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -91,7 +91,7 @@ const SuggestedUsers = () => {
                     <img className="shadow-lg border-2" src="https://i.ibb.co/4Zjxn5y/g2.jpg" style={chatRoomDivUserImageStyle} alt="Bonnie_image" />
                     <span className="text-md text-gray-500 dark:text-gray-400 my-3">Jhoan smith</span>
                     <div className="dark:text-gray-400 my-3 flex -mt-3 text-blue-600" style={{ fontSize: "12px" }}>Department of sociology</div>
-                  <button type="button" className="text-white bg-gradient-to-r  mt-2 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 text-center mr-2 mb-5 "> Follow <i className="fa-regular fa-star text-white text-md mx-3"></i> </button>
+                  <button type="button" className="text-white bg-gradient-to-r  mt-2 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 text-center mr-2 mb-5"> Follow <i className="fa-regular fa-star text-white text-md mx-3"></i> </button>
                 </div>
             </div>
         </div>
