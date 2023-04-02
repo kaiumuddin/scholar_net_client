@@ -1,9 +1,12 @@
 import React from "react";
+import AskQuestion from '../../Shared/AskQuestion/AskQuestion.jsx';
+import PopularBooks from "../../Shared/PopularBooks/PopularBooks.js";
 
 const RightContent = () => {
   return (
-    <div className="bg-gray-100">
-      Right
+    <div>
+      <PopularBooks></PopularBooks>
+      <AskQuestion></AskQuestion>
     </div>
   );
 };

@@ -14,13 +14,13 @@ const Categories = () => {
         <div></div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 justify-center items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 justify-center items-center">
         <Card>
           <img className="h-12 w-12 mx-auto" src="https://wpkixx.com/html/socimo/images/brand1.png" alt="" />
-          <h5 className="text-lg font-sans mx-auto font-semibold">
+          <h5 className="text-md font-sans mx-auto font-semibold">
             HTML5 COURSES
           </h5>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center text-sm">
             <p>6 Courses</p>
             <p>5 Bundles</p>
           </div>
@@ -28,10 +28,10 @@ const Categories = () => {
 
         <Card>
           <img className="h-12 w-12 mx-auto" src="https://wpkixx.com/html/socimo/images/brand5.png" alt="" />
-          <h5 className="text-lg font-sans mx-auto font-semibold">
+          <h5 className="text-md font-sans mx-auto font-semibold">
             HTML5 COURSES
           </h5>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center text-sm">
             <p>6 Courses</p>
             <p>5 Bundles</p>
           </div>
@@ -39,10 +39,10 @@ const Categories = () => {
 
         <Card>
           <img className="h-12 w-12 mx-auto" src="https://wpkixx.com/html/socimo/images/brand3.png" alt="" />
-          <h5 className="text-lg font-sans mx-auto font-semibold">
+          <h5 className="text-md font-sans mx-auto font-semibold">
             HTML5 COURSES
           </h5>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center text-sm">
             <p>6 Courses</p>
             <p>5 Bundles</p>
           </div>
@@ -50,10 +50,10 @@ const Categories = () => {
 
         <Card>
           <img className="h-12 w-12 mx-auto" src="https://wpkixx.com/html/socimo/images/brand4.png" alt="" />
-          <h5 className="text-lg font-sans mx-auto font-semibold">
+          <h5 className="text-md font-sans mx-auto font-semibold">
             HTML5 COURSES
           </h5>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center text-sm">
             <p>6 Courses</p>
             <p>5 Bundles</p>
           </div>
