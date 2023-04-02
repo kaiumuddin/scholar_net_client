@@ -13,14 +13,6 @@ const SuggestedUsers = () => {
         duration: "2s"
     };
 
-    let accEleSetting;
-
-    let mobileRegx = /Mobi|Tablet|iPad|iPhone/;
-    if (mobileRegx.test(navigator.userAgent)) {
-        accEleSetting.button = true;
-    }
-
-
     let buttonSetting = {
         placeOn: "middle-inside",
         hoverEvent: true,
@@ -73,17 +65,17 @@ const SuggestedUsers = () => {
         marginTop: "43px"
     }
 
-    let rBtnCpnt = (<button style={btnWrapperStyle} >
+    let rBtnCpnt = (<div style={btnWrapperStyle} >
         <button style={btnStyle} className="material-icons -mt-1" >
             <i className="fa-solid fa-arrow-right text-2xl" style={{ color: "#0E9F6E" }}></i>
         </button>
-    </button>);
+    </div>);
 
-    let lBtnCpnt = (<button style={btnWrapperStyle}>
+    let lBtnCpnt = (<div style={btnWrapperStyle}>
         <button style={btnStyle} className="material-icons -mt-1">
             <i className="fa-solid fa-arrow-left text-2xl" style={{ color: "#0E9F6E" }}></i>
         </button>
-    </button>);
+    </div>);
     const chatRoomDivUserImageStyle = {
         height: "381px",
         width: "150px",
