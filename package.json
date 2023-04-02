@@ -8,10 +8,16 @@
     "@testing-library/user-event": "^13.5.0",
     "flowbite": "^1.6.4",
     "flowbite-react": "^0.4.2",
+    "node": "^19.8.1",
+    "postcss-dir-pseudo-class": "^7.0.2",
+    "postcss-preset-env": "^8.3.0",
     "react": "^18.2.0",
+    "react-carousel-slider": "^2.0.13",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -39,6 +45,11 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.21.4",
+    "postcss-pseudo-class-any-link": "^8.0.2",
     "tailwindcss": "^0.0.0-insiders.76ed3dc"
   }
 }

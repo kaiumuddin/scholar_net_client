@@ -2,7 +2,6 @@ import { Dropdown, Navbar } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
 // import img from "../../../Assets/Images";
-import "./Header.css";
 
 const Header = () => {
   return (
@@ -14,9 +13,10 @@ const Header = () => {
 
       <Navbar.Brand href="/">
         {/* <img src={img} className="mr-3 h-6 sm:h-9" alt="ScholarNet Logo" /> */}
-        <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          ScholarNet
-        </span>
+        <div className="self-center flex justify-around whitespace-nowrap text-xl font-semibold dark:text-white">
+         <p> Scholar Net</p>
+          <img src="https://cdn.dribbble.com/users/2229852/screenshots/10163018/media/b259931291e7624e6902e29fef3bde4e.png?compress=1&resize=400x300" alt="logo"  style={{height:"56px", width:"56px", marginTop:"-10px"}}/>
+        </div>
       </Navbar.Brand>
 
       <Navbar.Collapse>

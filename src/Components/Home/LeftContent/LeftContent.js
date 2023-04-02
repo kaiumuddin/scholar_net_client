@@ -1,11 +1,22 @@
 import React from 'react';
-
+import CreateNewPost from './CreateNewPost/CreateNewPost';
+import RecentStories from './RecentStories/RecentStories';
+import SuggestedUsers from './SuggestedUsers/SuggestedUsers';
+import UsersPosts from './UsersPosts/UsersPosts';
 const LeftContent = () => {
-    return (
-        <div className='bg-slate-900 p-40'>
-            <h1 className='text-white'>Left Content</h1>
-        </div>
-    );
+  return (
+    <>
+      <div className='p-8'>
+        <CreateNewPost></CreateNewPost>
+        <RecentStories></RecentStories>
+     <div className='hidden md:block'>
+        <SuggestedUsers></SuggestedUsers> 
+     </div>
+        <UsersPosts></UsersPosts>
+      </div>
+
+    </>
+  );
 };
 
 export default LeftContent;
