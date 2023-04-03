@@ -103,7 +103,7 @@ const UsersPosts = () => {
                         className="items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                         onClick={() => setCommentStatus(commentStatues === false ? true : false)}
                       >
-                        <div className='flex'> <p>Comment</p> <i className="fa-solid fa-comment-dots mx-2 text-lg -mt-1"></i></div>
+                        <div className='flex py-1'> <p>Comment</p> <i className="fa-solid fa-comment-dots mx-2 text-lg -mt-1"></i></div>
                       </button>
 
                     </div>
