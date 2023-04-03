@@ -92,17 +92,17 @@ const UsersPosts = () => {
                   </div>
                   <div className="mt-4 flex flex-col md:flex-row space-x-3 lg:mt-6">
                     <button
-                      className="inline-flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                      className="flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                     >
-                      <span><i className="fa-regular fa-thumbs-up mx-2 text-lg"></i> Like</span>
+                  <div className='flex justify-around'> <p>Like</p> <i className="fa-regular fa-thumbs-up mx-2 text-lg mx-2 -mt-1"></i> </div>
                     </button>
 
                     <div>
                       <button
-                        className="inline-flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                         onClick={() => setCommentStatus(commentStatues === false ? true : false)}
                       >
-                        <span>Comment <i className="fa-solid fa-comment-dots mx-2 text-lg"></i></span>
+                        <div className='flex'> <p>Comment</p> <i className="fa-solid fa-comment-dots mx-2 text-lg -mt-1"></i></div>
                       </button>
 
                     </div>
