@@ -6,7 +6,7 @@ import UsersPosts from './UsersPosts/UsersPosts';
 const LeftContent = () => {
   return (
     <>
-      <div className='p-8'>
+      <div className='p-0'>
         <CreateNewPost></CreateNewPost>
         <RecentStories></RecentStories>
      <div className='hidden md:block'>

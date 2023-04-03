@@ -35,7 +35,7 @@ const RecentStories = () => {
                             </div>
                         </div>
                         {/* stories images  */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-14">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                             {
                                 [0, 1, 2].map((index) =>
 

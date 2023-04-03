@@ -6,25 +6,27 @@
    border-radius: 12px;
    background-image: url("https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7cfe0e0674f6598c38ad.jpg");
    background-size:cover;
-   margin: 0 10px;
+   margin: 0 2px;
+   transform: scale(0.8);
   }
 
   .UserStoryImageBackground{
     position: relative;
     height: 280px;
     width: 185px;
+    transform: scale(0.8);
     border-radius: 12px;
     background-size:cover;
-    margin: 0 10px;
+    margin: 0 2px;
   }
 
 .userStoryImageLogo{
     position: absolute;
-    transform: translateY(-272px) translateX(20px);
+    transform: translateY(-246px) translateX(20px);
 }
 .addStoriesIcon{
     position: absolute;
-    transform: translateY(102px) translateX(65px);  
+    transform: translateY(65px) translateX(60px);  
     height: 42px;
     width: 42px;
     display: flex;
@@ -33,8 +35,8 @@
 }
 .userImageTextOfStories{
     position: absolute;
-    transform: translateY(189px) translateX(-10px);  
-    width: 185px;
+    transform: translateY(134px) translateX(1px);  
+    width: 147px;
     background-color: rgba(6, 5, 11,0.6);
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -42,8 +44,8 @@
 }
 .addUserImageTextOfStories{
   position: absolute;
-  transform: translateY(163px) translateX(-10px);  
-  width: 185px;
+  transform: translateY(111px) translateX(3px);  
+  width: 146px;
   background-color: rgba(6, 5, 11,0.6);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;

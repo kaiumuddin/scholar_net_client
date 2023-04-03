@@ -7,6 +7,7 @@ import sad from "../../../../assets/iconImage/sad.png";
 import sad2 from "../../../../assets/iconImage/sad2.png";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import EditPostModal from '../Modals/EditPost/EditPost';
 const UsersPosts = () => {
   //toggle message  and share 
   const [commentStatues, setCommentStatus] = useState(false);
@@ -17,7 +18,7 @@ const UsersPosts = () => {
     <>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) =>
 
-        <div className="w-full md:max-w-2xl   ms-52 md:ms-10 mt-5 mb-3" key={index}>
+        <div className="w-full md:max-w-2xl   ms-52 md:ms-0 mt-5 mb-3" key={index}>
           <Card>
             <div className="flex justify-between flex-col md:flex-row my-2">
               <div className="flex font-bold  my-5">
@@ -36,7 +37,7 @@ const UsersPosts = () => {
                     href="#"
                     className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
-                    <span>   <i className="fa-solid fa-pen-to-square mx-2"></i>    Edit post</span>
+                    <button  data-modal-target="ChatModal" data-modal-toggle="ChatModal">   <i className="fa-solid fa-pen-to-square mx-2"></i>    Edit post</button>
                   </NavLink>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -232,9 +233,7 @@ const UsersPosts = () => {
           <div>  <button type="button" className="text-white w-72 bg-gradient-to-r  mt-2 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-full text-sm px-12 py-3 text-center mr-2 mb-5 "> Load more... </button></div>
         </div>
       </div>
-
-
-
+<EditPostModal></EditPostModal>
     </>
   );
 };

@@ -23,3 +23,6 @@ code {
 .commonBorderColor{
   border: 2px solid rgba(0, 0, 0, 0.2); 
 }
+.rightContentStyle{
+transform: scale(0.9);
+}
