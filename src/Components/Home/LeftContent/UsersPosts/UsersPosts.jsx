@@ -8,6 +8,7 @@ import sad2 from "../../../../assets/iconImage/sad2.png";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import EditPostModal from '../Modals/EditPost/EditPost';
+import ReportModal from '../Modals/ReportModal/ReportModal';
 const UsersPosts = () => {
   //toggle message  and share 
   const [commentStatues, setCommentStatus] = useState(false);
@@ -37,7 +38,7 @@ const UsersPosts = () => {
                     href="#"
                     className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
-                    <button  data-modal-target="ChatModal" data-modal-toggle="ChatModal">   <i className="fa-solid fa-pen-to-square mx-2"></i>    Edit post</button>
+                    <button  data-modal-target="EditPostModal" data-modal-toggle="EditPostModal">   <i className="fa-solid fa-pen-to-square mx-2"></i>    Edit post</button>
                   </NavLink>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -63,7 +64,7 @@ const UsersPosts = () => {
                     href="#"
                     className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
-                    <span> <i className="fa-solid fa-flag-checkered mx-2"></i>   Report post</span>
+                    <button data-modal-target="ReportModal" data-modal-toggle="ReportModal"> <i className="fa-solid fa-flag-checkered mx-2"></i>   Report post</button>
                   </NavLink>
                 </Dropdown.Item>
               </Dropdown>
@@ -234,6 +235,7 @@ const UsersPosts = () => {
         </div>
       </div>
 <EditPostModal></EditPostModal>
+<ReportModal></ReportModal>
     </>
   );
 };

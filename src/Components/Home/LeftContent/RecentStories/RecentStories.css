@@ -44,7 +44,7 @@
 }
 .addUserImageTextOfStories{
   position: absolute;
-  transform: translateY(111px) translateX(3px);  
+  transform: translateY(111px) translateX(2px);  
   width: 146px;
   background-color: rgba(6, 5, 11,0.6);
   border-bottom-left-radius: 12px;

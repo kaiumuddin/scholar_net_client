@@ -8,7 +8,7 @@ const RecentStories = () => {
 
         <>
 
-            <div className="my-12">
+            <div className="my-12 sm:ms-0 lg:-ms-10 p-4">
                 <div className="flex justify-between mt-8 px-4">
                     <h2> Recent stories </h2>
                     <NavLink to="/see-all" className="text-blue-600">See all</NavLink>
