@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Card, Dropdown, Avatar, Textarea, Label } from "flowbite-react";
 import { NavLink } from 'react-router-dom';
-import like from "../../../../assets/iconImage/like.png";
-import heart from "../../../../assets/iconImage/heart.png";
-import sad from "../../../../assets/iconImage/sad.png";
-import sad2 from "../../../../assets/iconImage/sad2.png";
+import like from "../../../../Assets/iconImage/like.png";
+import heart from "../../../../Assets/iconImage/heart.png";
+import sad from "../../../../Assets/iconImage/sad.png";
+import sad2 from "../../../../Assets/iconImage/sad2.png";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import EditPostModal from '../Modals/EditPost/EditPost';

@@ -1,5 +1,5 @@
 import React from 'react';
-import front_fuger2 from '../../../assets/iconImage/frnd-figure2.jpg';
+import front_fuger2 from '../../../Assets/iconImage/frnd-figure2.jpg';
 import './Suggestion.css'
 
 const Suggestion = () => {

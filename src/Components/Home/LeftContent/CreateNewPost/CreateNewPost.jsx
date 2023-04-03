@@ -1,7 +1,7 @@
 import React from 'react';
-import pictureImage from  "../../../../assets/iconImage/picImage.png"
-import activitiesImage from "../../../../assets/iconImage/feeling.png"
-import liveStream from "../../../../assets/iconImage/liveStreamImage.png"
+import pictureImage from  "../../../../Assets/iconImage/picImage.png"
+import activitiesImage from "../../../../Assets/iconImage/feeling.png"
+import liveStream from "../../../../Assets/iconImage/liveStreamImage.png"
 import PostModal from '../Modals/PostModal/PostModal';
 const CreateNewPost = () => {
     return (

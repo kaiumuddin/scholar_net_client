@@ -1,6 +1,6 @@
 import React from 'react';
-import group1 from '../../../assets/iconImage/your-group1.jpg';
-import group2 from '../../../assets/iconImage/your-group2.jpg';
+import group1 from '../../../Assets/iconImage/your-group1.jpg';
+import group2 from '../../../Assets/iconImage/your-group2.jpg';
 
 const Group = () => {
     return (
