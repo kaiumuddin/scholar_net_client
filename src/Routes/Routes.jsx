@@ -9,6 +9,8 @@ import Blogs from "../Components/Blogs/Blogs/Blogs";
 import Groups from "../Components/Groups/Groups/Groups";
 import PrivacySettings from "../Components/Profile/PrivacySettings/PrivacySettings";
 import Profile from "../Components/Profile/Profile/Profile";
+import SignUp from "../Components/Register/SignUp/SignUp";
+import Login from "../Components/Register/Login/Login";
 
 const router = createBrowserRouter([
   { 
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
           {
               path: "/profilePrivacy",
               element: <PrivacySettings></PrivacySettings>
+          },
+          {
+              path: "/signup",
+              element: <SignUp></SignUp>
+          },
+          {
+              path: "/login",
+              element: <Login></Login>
           },
       {
         path: "*",
