@@ -1,5 +1,5 @@
 import React from 'react';
-import front_fuger2 from '../../../Assets/frnd-figure2.jpg';
+import front_fuger2 from '../../../Assets/iconImage/frnd-figure2.jpg';
 import './Suggestion.css'
 
 const Suggestion = () => {
@@ -14,7 +14,7 @@ const Suggestion = () => {
                             <p className='flex justify-end text-gray-100 font-semibold pr-8 pb-7 '>Member 505k</p>
                         </div>
                     </div>
-                    <div className='relative left-28'>
+                    <div className='relative left-28 w-40'>
                         <p className='text-md font-semibold text-gray-500'>Social Group</p>
                         <p className='text-gray-400'>@biolabest</p>
                     </div>

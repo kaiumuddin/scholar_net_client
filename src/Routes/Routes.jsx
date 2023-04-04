@@ -9,40 +9,48 @@ import Blogs from "../Components/Blogs/Blogs/Blogs";
 import Groups from "../Components/Groups/Groups/Groups";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-            path: "/videos",
-            element: <Videos></Videos>
-        },
-        {
-            path: "/courses",
-            element: <Courses></Courses>
-        },
-        {
-            path: "/books",
-            element: <Books></Books>
-        },
-        {
-            path: "/blogs",
-            element: <Blogs></Blogs>
-        },
-        {
-            path: "/groups",
-            element: <Groups></Groups>
-        },
-      ]
-    },
-    {
-      path: "*",
-      element: <Error></Error>
-    },
+  { 
+
+    path:"/", errorElement:<h2 className="text-3xl font-bolder my-52 text-center text-red-600"> You have an error </h2>, children:[
+
+   
+      {
+        path: "/",
+        element: <Main></Main>,
+        children: [
+          {
+              path: "/",
+              element: <Home></Home>
+          },
+          {
+              path: "/videos",
+              element: <Videos></Videos>
+          },
+          {
+              path: "/courses",
+              element: <Courses></Courses>
+          },
+          {
+              path: "/books",
+              element: <Books></Books>
+          },
+          {
+              path: "/blogs",
+              element: <Blogs></Blogs>
+          },
+          {
+              path: "/groups",
+              element: <Groups></Groups>
+          },
+      {
+        path: "*",
+        element: <Error></Error>
+      },
+        ]
+      }
+    ]
+  } ,
+    
   ]);
 
 export default router;
