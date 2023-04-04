@@ -7,6 +7,8 @@ import Courses from "../Components/Courses/Courses/Courses";
 import Books from "../Components/Books/Books/Books";
 import Blogs from "../Components/Blogs/Blogs/Blogs";
 import Groups from "../Components/Groups/Groups/Groups";
+import PrivacySettings from "../Components/Profile/PrivacySettings/PrivacySettings";
+import Profile from "../Components/Profile/Profile/Profile";
 
 const router = createBrowserRouter([
   { 
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
           {
               path: "/groups",
               element: <Groups></Groups>
+          },
+          {
+              path: "/profile",
+              element: <Profile></Profile>
+          },
+          {
+              path: "/profilePrivacy",
+              element: <PrivacySettings></PrivacySettings>
           },
       {
         path: "*",

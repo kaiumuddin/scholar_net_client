@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import CarouselSlider from 'react-carousel-slider';
-import chatRoomImageIcon from "../../../../assets/iconImage/chatRoomImageIcon.PNG";
+import chatRoomImageIcon from "../../../../Assets/iconImage/chatRoomImageIcon.PNG";
 import ChatModal from '../Modals/ChatModal/ChatModal';
 const ChatRoom = () => {
     const sliderBoxStyle = {
