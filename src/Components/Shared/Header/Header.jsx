@@ -42,9 +42,7 @@ const Header = () => {
 						</span>
 					</Dropdown.Header>
 					<Dropdown.Item>
-						<Navbar.Link as={Link} to="/profile">
-							Profile
-						</Navbar.Link>
+						<Link to={"/profile"}>Profile</Link>
 					</Dropdown.Item>
 					<Dropdown.Item>Settings</Dropdown.Item>
 					<Dropdown.Divider />

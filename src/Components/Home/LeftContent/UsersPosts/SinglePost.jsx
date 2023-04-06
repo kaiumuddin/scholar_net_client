@@ -255,7 +255,7 @@ export default function SinglePost() {
 								<button className="text-white bg-gradient-to-r  ps-3  mt-5 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 pb-2 text-center mr-2 mb-5">
 									{" "}
 									Send comment{" "}
-									<i class="fa-solid fa-paper-plane mx-2 text-white text-lg"></i>{" "}
+									<i className="fa-solid fa-paper-plane mx-2 text-white text-lg"></i>{" "}
 								</button>
 							</div>
 						</form>
@@ -292,7 +292,7 @@ export default function SinglePost() {
 										should to obey this.
 									</p>
 									<div className=" -ms-5 md:ms-12  float-right hover:cursor-pointer mb-5">
-										<i class="fa-solid fa-heart mx-2 mb-12 text-lg text-green-600"></i>
+										<i className="fa-solid fa-heart mx-2 mb-12 text-lg text-green-600"></i>
 										<i className="fa-solid fa-reply-all mx-2 mb-12 text-lg text-green-600"></i>
 									</div>
 								</div>
@@ -320,7 +320,7 @@ export default function SinglePost() {
 													Copied !!
 												</p>
 											) : (
-												<i class="fa-regular fa-copy text-2xl text-green-600"></i>
+												<i className="fa-regular fa-copy text-2xl text-green-600"></i>
 											)}
 										</p>
 									</CopyToClipboard>
