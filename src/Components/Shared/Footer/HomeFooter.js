@@ -1,9 +1,9 @@
 import React from 'react';
-import { Footer } from "flowbite-react";
+import {Footer} from "flowbite-react";
 // import logo from "../../../Assets/iconImage/logo.png" ;
 const HomeFooter = () => {
   return (
-    <div className='container max-w-screen-2xl mx-auto px-5'>
+    <div className='container  mx-auto px-5'>
       <Footer container={true}>
         <div className="w-full">
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">

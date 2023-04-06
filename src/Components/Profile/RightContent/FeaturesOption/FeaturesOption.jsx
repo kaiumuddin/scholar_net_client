@@ -4,7 +4,7 @@ import { FiSearch } from "@react-icons/all-files/fi/FiSearch";
 
 const FeaturesOption = () => {
 	return (
-		<div className="my-6 lg:flex justify-between">
+		<div className="my-6 lg:flex justify-between flex-wrap">
 			<div className="flex gap-4 mb-5 lg:mb-0">
 				<Link
 					to="/profile"

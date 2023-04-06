@@ -14,8 +14,8 @@ export default function SinglePost() {
 	const [copyStatus, setCopyStatus] = useState(false);
 
 	return (
-		<div className="w-full md:max-w-2xl   ms-52 md:ms-0 mt-5 mb-3">
-			<Card>
+		<div className="w-full mt-5 mb-3">
+			<Card className="shadow-none">
 				<div className="flex justify-between flex-col md:flex-row my-2">
 					<div className="flex font-bold  my-5">
 						<img
@@ -102,9 +102,9 @@ export default function SinglePost() {
 					</Dropdown>
 				</div>
 
-				<div className="flex flex-col items-center my-2 pb-10">
+				<div className="flex flex-col items-center my-2 pb-2">
 					<img
-						className="mb-3 h-auto w-auto shadow-lg rounded-lg"
+						className="mb-3 h-auto w-auto rounded-lg"
 						src="https://i.ibb.co/9qJF3hJ/study.jpg"
 						alt="Bonnie"
 					/>
@@ -252,7 +252,7 @@ export default function SinglePost() {
 									required={true}
 									rows={3}
 								/>
-								<button className="text-white bg-gradient-to-r  ps-3  mt-5 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 pb-2 text-center mr-2 mb-5">
+								<button className="text-white bg-gradient-to-r  ps-3  mt-5 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-teal-500/50 dark:dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 pb-2 text-center mr-2 mb-5">
 									{" "}
 									Send comment{" "}
 									<i className="fa-solid fa-paper-plane mx-2 text-white text-lg"></i>{" "}
