@@ -21,7 +21,7 @@ const Courses = () => {
             <p>Best Seller</p>
           </div>
 
-          <div class="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
+          <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>
@@ -70,7 +70,7 @@ const Courses = () => {
             <p>Best Seller</p>
           </div>
 
-          <div class="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
+          <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>
@@ -119,7 +119,7 @@ const Courses = () => {
             <p>Best Seller</p>
           </div>
 
-          <div class="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
+          <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>
@@ -168,7 +168,7 @@ const Courses = () => {
             <p>Best Seller</p>
           </div>
 
-          <div class="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
+          <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>

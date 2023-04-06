@@ -12,7 +12,7 @@ const Follow = () => {
                 <p className='font-semibold text-gray-600 pb-5 text-xl'>Who's follownig</p>
                 <div>
                     <div className='flex items-center gap-3 w-full mb-5'>
-                        <img class="w-10 h-10 rounded-full" src={follow} alt="Rounded avatar" />
+                        <img className="w-10 h-10 rounded-full" src={follow} alt="Rounded avatar" />
                         <div className='flex w-full items-center justify-between'>
                             <div>
                                 <p className='font-semibold text-gray-600 cursor-pointer hover:text-sky-500 duration-300'>Kelly Bill</p>
@@ -22,7 +22,7 @@ const Follow = () => {
                         </div>
                     </div>
                     <div className='flex items-center gap-3 w-full mb-5'>
-                        <img class="w-10 h-10 rounded-full" src={follow2} alt="Rounded avatar" />
+                        <img className="w-10 h-10 rounded-full" src={follow2} alt="Rounded avatar" />
                         <div className='flex w-full items-center justify-between'>
                             <div>
                                 <p className='font-semibold text-gray-600 cursor-pointer hover:text-sky-500 duration-300'>Issabel</p>
@@ -32,7 +32,7 @@ const Follow = () => {
                         </div>
                     </div>
                     <div className='flex items-center gap-3 w-full mb-5'>
-                        <img class="w-10 h-10 rounded-full" src={follow3} alt="Rounded avatar" />
+                        <img className="w-10 h-10 rounded-full" src={follow3} alt="Rounded avatar" />
                         <div className='flex w-full items-center justify-between'>
                             <div>
                                 <p className='font-semibold text-gray-600 cursor-pointer hover:text-sky-500 duration-300'>Andrew</p>
@@ -42,7 +42,7 @@ const Follow = () => {
                         </div>
                     </div>
                     <div className='flex items-center gap-3 w-full mb-5'>
-                        <img class="w-10 h-10 rounded-full" src={follow4} alt="Rounded avatar" />
+                        <img className="w-10 h-10 rounded-full" src={follow4} alt="Rounded avatar" />
                         <div className='flex w-full items-center justify-between'>
                             <div>
                                 <p className='font-semibold text-gray-600 cursor-pointer hover:text-sky-500 duration-300'>Sophia</p>
@@ -52,7 +52,7 @@ const Follow = () => {
                         </div>
                     </div>
                     <div className='flex items-center gap-3 w-full'>
-                        <img class="w-10 h-10 rounded-full" src={follow5} alt="Rounded avatar" />
+                        <img className="w-10 h-10 rounded-full" src={follow5} alt="Rounded avatar" />
                         <div className='flex w-full items-center justify-between'>
                             <div>
                                 <p className='font-semibold text-gray-600 cursor-pointer hover:text-sky-500 duration-300'>Allen</p>
