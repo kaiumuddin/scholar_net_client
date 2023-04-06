@@ -25,14 +25,14 @@ export default function SinglePost() {
 						/>
 						<div className="flex flex-col mx-2">
 							<p className="text-lg text-blue-600">
-								{" "}
+						
 								Susmita sen{" "}
 								<span className="text-gray-400 text-sm">
 									Create this post
 								</span>{" "}
 							</p>
 							<p className="text-md mt-1 mx-1 text-gray-400">
-								{" "}
+						
 								<i className="fa-solid fa-globe"></i> Published
 								Sep, 12, 2022
 							</p>
@@ -49,7 +49,7 @@ export default function SinglePost() {
 									data-modal-target="EditPostModal"
 									data-modal-toggle="EditPostModal"
 								>
-									{" "}
+							
 									<i className="fa-solid fa-pen-to-square mx-2"></i>{" "}
 									Edit post
 								</button>
@@ -62,7 +62,7 @@ export default function SinglePost() {
 								className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
 							>
 								<span>
-									{" "}
+							
 									<i className="fa-solid fa-trash-can mx-2"></i>{" "}
 									Delete post
 								</span>
@@ -76,7 +76,7 @@ export default function SinglePost() {
 								className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
 							>
 								<span>
-									{" "}
+							
 									<i className="fa-solid fa-eye-slash mx-2"></i>{" "}
 									Hide post
 								</span>
@@ -93,7 +93,7 @@ export default function SinglePost() {
 									data-modal-target="ReportModal"
 									data-modal-toggle="ReportModal"
 								>
-									{" "}
+							
 									<i className="fa-solid fa-flag-checkered mx-2"></i>{" "}
 									Report post
 								</button>
@@ -131,21 +131,21 @@ export default function SinglePost() {
 									</p>
 								</div>
 								<div className="mx-4">
-									{" "}
+							
 									<i className="fa-regular fa-message text-green-500"></i>{" "}
 									<p className="-mt-10 ms-5 text-sm text-gray-500">
 										200
 									</p>
 								</div>
 								<div className="mx-4">
-									{" "}
+							
 									<i className="fa-regular fa-star text-green-500"></i>{" "}
 									<p className="-mt-10 ms-5 text-sm text-gray-500">
 										230
 									</p>
 								</div>
 								<div className="mx-4">
-									{" "}
+							
 									<i className="fa-solid fa-share-nodes text-green-500"></i>{" "}
 									<p className="-mt-10 ms-5 text-sm text-gray-500">
 										110
@@ -155,7 +155,7 @@ export default function SinglePost() {
 							<div className="mt-4 flex flex-col md:flex-row space-x-3 lg:mt-6">
 								<button className="flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
 									<div className="flex justify-around">
-										{" "}
+								
 										<p>Like</p>{" "}
 										<i className="fa-regular fa-thumbs-up mx-2 text-lg mx-2 -mt-1"></i>{" "}
 									</div>
@@ -173,7 +173,7 @@ export default function SinglePost() {
 										}
 									>
 										<div className="flex py-1">
-											{" "}
+									
 											<p>Comment</p>{" "}
 											<i className="fa-solid fa-comment-dots mx-2 text-lg -mt-1"></i>
 										</div>
@@ -190,7 +190,7 @@ export default function SinglePost() {
 									}
 								>
 									<span>
-										{" "}
+								
 										Share{" "}
 										<i className="fa-solid fa-share-from-square  mx-2 text-lg"></i>
 									</span>
@@ -200,7 +200,7 @@ export default function SinglePost() {
 
 						<div className="mx-8">
 							<div className=" -ms-5 md:ms-12 mt-8">
-								{" "}
+						
 								Replay{" "}
 								<i className="fa-solid fa-reply-all mx-2 mb-12 text-lg"></i>
 							</div>
@@ -230,7 +230,7 @@ export default function SinglePost() {
 									</React.Fragment>
 								</div>
 								<p className="mx-3 -mt-5 text-gray-600">
-									{" "}
+							
 									30+{" "}
 								</p>
 							</div>
@@ -253,7 +253,7 @@ export default function SinglePost() {
 									rows={3}
 								/>
 								<button className="text-white bg-gradient-to-r  ps-3  mt-5 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-lg shadow-teal-500/50 dark:shadow-lg dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 pb-2 text-center mr-2 mb-5">
-									{" "}
+							
 									Send comment{" "}
 									<i className="fa-solid fa-paper-plane mx-2 text-white text-lg"></i>{" "}
 								</button>
@@ -272,7 +272,7 @@ export default function SinglePost() {
 										/>
 										<div className="flex flex-col mx-2">
 											<p className="text-lg text-blue-600">
-												{" "}
+										
 												Linda smith{" "}
 												<span className="text-gray-400 text-sm -mt-2">
 													post date: 04/03/2023
@@ -304,7 +304,7 @@ export default function SinglePost() {
 				<>
 					{showShareLink && (
 						<>
-							{" "}
+					
 							{
 								<div className="-mt-5">
 									<CopyToClipboard
@@ -316,7 +316,7 @@ export default function SinglePost() {
 										>
 											{copyStatus ? (
 												<p className="text-green-600 text-md">
-													{" "}
+											
 													Copied !!
 												</p>
 											) : (
@@ -333,7 +333,7 @@ export default function SinglePost() {
 										https://flowbite.com/docs/forms/toggle/#disabled-state
 									</a>
 									<p className="my-3 text-gray-400 font-bold text-lg">
-										{" "}
+								
 										Copy this link to share with your
 										friends.
 									</p>

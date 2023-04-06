@@ -21,17 +21,14 @@ const Courses = () => {
 						<p>Best Seller</p>
 					</div>
 
-<<<<<<< HEAD
           <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>
-=======
-					<div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
+			<div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
 						<AiFillStar></AiFillStar>
 						<p>4.5</p>
 					</div>
->>>>>>> 6d07a1f480fca25c0f7db1e99f06f465c58d0331
 
 					<div className="flex justify-between items-center">
 						<div className="flex gap-2 items-center">
@@ -79,17 +76,15 @@ const Courses = () => {
 						<p>Best Seller</p>
 					</div>
 
-<<<<<<< HEAD
+
           <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>
-=======
-					<div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
+			<div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
 						<AiFillStar></AiFillStar>
 						<p>4.5</p>
 					</div>
->>>>>>> 6d07a1f480fca25c0f7db1e99f06f465c58d0331
 
 					<div className="flex justify-between items-center">
 						<div className="flex gap-2 items-center">
@@ -137,17 +132,15 @@ const Courses = () => {
 						<p>Best Seller</p>
 					</div>
 
-<<<<<<< HEAD
           <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>
-=======
+
 					<div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
 						<AiFillStar></AiFillStar>
 						<p>4.5</p>
 					</div>
->>>>>>> 6d07a1f480fca25c0f7db1e99f06f465c58d0331
 
 					<div className="flex justify-between items-center">
 						<div className="flex gap-2 items-center">
@@ -195,17 +188,16 @@ const Courses = () => {
 						<p>Best Seller</p>
 					</div>
 
-<<<<<<< HEAD
+
           <div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
             <AiFillStar></AiFillStar>
             <p>4.5</p>
           </div>
-=======
+
 					<div className="absolute bottom-48 left-4 bg-amber-400 text-white h-5 rounded-2xl flex gap-1 items-center p-3 justify-center">
 						<AiFillStar></AiFillStar>
 						<p>4.5</p>
 					</div>
->>>>>>> 6d07a1f480fca25c0f7db1e99f06f465c58d0331
 
 					<div className="flex justify-between items-center">
 						<div className="flex gap-2 items-center">
