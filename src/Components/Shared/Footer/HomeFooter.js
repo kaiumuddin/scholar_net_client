@@ -1,13 +1,13 @@
 import React from 'react';
-import { Footer } from "flowbite-react";
+import {Footer} from "flowbite-react";
 // import logo from "../../../Assets/iconImage/logo.png" ;
 const HomeFooter = () => {
   return (
-    <div className='container max-w-screen-2xl mx-auto px-5'>
-      <Footer container={true}>
+    <div className='container  mx-auto'>
+      <Footer className="shadow-none">
         <div className="w-full">
-          <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-            <div className='rounded-full'>
+          <div className="grid w-full md:flex md:grid-cols-1">
+            <div className=''>
               <Footer.Brand
                 href="https://Scholarnet.com"
                 src="https://cdn.dribbble.com/users/2229852/screenshots/10163018/media/b259931291e7624e6902e29fef3bde4e.png?compress=1&resize=400x300"
@@ -15,7 +15,7 @@ const HomeFooter = () => {
                 name="SCHOLAR NET"
               />
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+            <div className="mx-auto grid gap-8 mt-4 grid-cols-3 ">
               <div>
                 <Footer.Title title="about" />
                 <Footer.LinkGroup col={true}>
@@ -52,7 +52,7 @@ const HomeFooter = () => {
             </div>
           </div>
           <Footer.Divider />
-          <div className="w-full sm:flex sm:items-center sm:justify-between">
+          <div className="w-full flex items-center justify-between">
             <Footer.Copyright
               href="#"
               year={2023}

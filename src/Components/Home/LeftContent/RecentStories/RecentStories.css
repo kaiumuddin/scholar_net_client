@@ -1,62 +1,66 @@
-
-.addUserStoryImageBackground{
-   position: relative;
-   height: 280px;
-   width: 185px;
-   border-radius: 12px;
-   background-image: url("https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7cfe0e0674f6598c38ad.jpg");
-   background-size:cover;
-   margin: 0 2px;
-   transform: scale(0.8);
-  }
-
-  .UserStoryImageBackground{
-    position: relative;
-    height: 280px;
-    width: 185px;
-    transform: scale(0.8);
-    border-radius: 12px;
-    background-size:cover;
-    margin: 0 2px;
-  }
-
-.userStoryImageLogo{
-    position: absolute;
-    transform: translateY(-246px) translateX(20px);
+.addUserStoryImageBackground {
+  position: relative;
+  height: 280px;
+  width: 185px;
+  border-radius: 12px;
+  background-image: url("https://i.pinimg.com/originals/a4/96/c2/a496c2b6bc5d7cfe0e0674f6598c38ad.jpg");
+  background-size: cover;
+  margin: 0 2px;
+  transform: scale(0.8);
 }
-.addStoriesIcon{
-    position: absolute;
-    transform: translateY(65px) translateX(60px);  
-    height: 42px;
-    width: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.UserStoryImageBackground {
+  position: relative;
+  height: 280px;
+  width: 185px;
+  transform: scale(0.8);
+  border-radius: 12px;
+  background-size: cover;
+  margin: 0 2px;
 }
-.userImageTextOfStories{
-    position: absolute;
-    transform: translateY(134px) translateX(1px);  
-    width: 147px;
-    background-color: rgba(6, 5, 11,0.6);
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    text-align: center;
-}
-.addUserImageTextOfStories{
+
+.userStoryImageLogo {
   position: absolute;
-  transform: translateY(111px) translateX(2px);  
-  width: 146px;
-  background-color: rgba(6, 5, 11,0.6);
+  transform: translateY(-246px) translateX(20px);
+}
+
+.addStoriesIcon {
+  position: absolute;
+  transform: translateY(65px) translateX(60px);
+  height: 42px;
+  width: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userImageTextOfStories {
+  position: absolute;
+  transform: translateY(134px) translateX(1px);
+  width: 147px;
+  background-color: rgba(6, 5, 11, 0.6);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   text-align: center;
 }
 
-.chatRoomDivUserImageStyle{
-height: 85px;
-width: 85px;
+.addUserImageTextOfStories {
+  position: absolute;
+  transform: translateY(111px) translateX(2px);
+  width: 146px;
+  background-color: rgba(6, 5, 11, 0.6);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  text-align: center;
 }
-.addUserStoryImageBackground:hover , .UserStoryImageBackground:hover {
-background-size: 260%;
-transition: background-size 2s;
+
+.chatRoomDivUserImageStyle {
+  height: 85px;
+  width: 85px;
+}
+
+.addUserStoryImageBackground:hover,
+.UserStoryImageBackground:hover {
+  background-size: 260%;
+  transition: background-size 2s;
 }

@@ -8,13 +8,12 @@ const LeftContent = () => {
     <>
       <div className='p-0'>
         <CreateNewPost></CreateNewPost>
-        <RecentStories></RecentStories>
-     <div className='hidden md:block'>
-        <SuggestedUsers></SuggestedUsers> 
-     </div>
+        {/* <RecentStories></RecentStories> */}
+        <div className='hidden md:block'>
+          <SuggestedUsers></SuggestedUsers>
+        </div>
         <UsersPosts></UsersPosts>
       </div>
-
     </>
   );
 };
