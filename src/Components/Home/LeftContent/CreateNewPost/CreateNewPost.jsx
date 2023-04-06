@@ -1,7 +1,7 @@
 import React from 'react';
-import pictureImage from  "../../../../assets/iconImage/picImage.png"
-import activitiesImage from "../../../../assets/iconImage/feeling.png"
-import liveStream from "../../../../assets/iconImage/liveStreamImage.png"
+import pictureImage from  "../../../../Assets/iconImage/picImage.png"
+import activitiesImage from "../../../../Assets/iconImage/feeling.png"
+import serviceLogo from "../../../../Assets/iconImage/serviceLogo.png"
 import PostModal from '../Modals/PostModal/PostModal';
 const CreateNewPost = () => {
     return (
@@ -14,9 +14,9 @@ const CreateNewPost = () => {
             </button>
           </div>
           <div className="flex justify-between flex-col md:flex-row mt-8 w-86 text-start">
-          <div className='flex justify-around hover:bg-slate-100 rounded-3xl py-2 px-3 cursor-pointer'> <img src={pictureImage} alt="Photosvideos" className='h-5 w-5'/> <p className='mx-2'>Photos/videos</p> </div>
-          <div className='flex justify-around hover:bg-slate-100 rounded-3xl py-2 px-3 cursor-pointer'> <img src={activitiesImage} alt="Feelings Activities" className='h-5 w-5'/>  <p className='mx-2'>Feelings/Activities</p> </div>
-          <div className='flex justify-around hover:bg-slate-100 rounded-3xl py-2 px-3 cursor-pointer'> <img src={liveStream} alt="Live stream" className='h-5 w-7'/>  <p className='mx-2'> Live stream </p> </div>
+          <div className='flex justify-around hover:bg-slate-100 rounded-3xl py-2 px-3 cursor-pointer'> <img src={pictureImage} alt="Photosvideos" className='h-5 w-5'/> <p className='mx-2'>Photos</p> </div>
+          <div className='flex justify-around hover:bg-slate-100 rounded-3xl py-2 px-3 cursor-pointer'> <img src={activitiesImage} alt="Feelings Activities" className='h-5 w-5'/>  <p className='mx-2'>Feelings</p> </div>
+          <div className='flex justify-around hover:bg-slate-100 rounded-3xl py-2 px-3 cursor-pointer'> <img src={serviceLogo} alt="Live stream" className='h-6 w-7'/>  <p className='mx-2'> Services </p> </div>
           </div>
          </div>
          <PostModal></PostModal>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { FaGlobe } from 'react-icons/fa';
-import IQoption from '../../../../assets/iconImage/sponsor.jpg';
-import IQoption2 from '../../../../assets/iconImage/sponsor2.jpg';
-
+import IQoption from '../../../../Assets/iconImage/sponsor.jpg';
+import IQoption2 from '../../../../Assets/iconImage/sponsor2.jpg';
 const Sponsore = () => {
     return (
         <div className='mb-10'>

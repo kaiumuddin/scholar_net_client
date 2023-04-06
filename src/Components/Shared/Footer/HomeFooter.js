@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer } from "flowbite-react";
-// import logo from "../../../assets/iconImage/logo.png" ;
+// import logo from "../../../Assets/iconImage/logo.png" ;
 const HomeFooter = () => {
   return (
     <div className='container max-w-screen-2xl mx-auto px-5'>
