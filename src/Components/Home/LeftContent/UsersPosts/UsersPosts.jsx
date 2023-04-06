@@ -10,7 +10,7 @@ const UsersPosts = () => {
 	return (
 		<>
 			{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => (
-				<SinglePost></SinglePost>
+				<SinglePost key={index}></SinglePost>
 			))}
 
 			<div className="mt-12">
