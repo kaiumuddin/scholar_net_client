@@ -2,6 +2,7 @@ import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import React from "react";
 import { Link } from "react-router-dom";
 // import img from "../../../Assets/Images";
+import { RiMessengerLine } from "react-icons/ri";
 
 const Header = () => {
 	return (
@@ -23,7 +24,10 @@ const Header = () => {
 				</div>
 			</Navbar.Brand>
 
-			<div className="flex md:order-2">
+			<div className="flex justify-center items-center md:order-2">
+				<Link to={"/chat"} className="mx-3">
+					<RiMessengerLine className="h-8 w-8 text-gray-400"></RiMessengerLine>
+				</Link>
 				<Dropdown
 					arrowIcon={false}
 					inline={true}
@@ -44,7 +48,9 @@ const Header = () => {
 					<Dropdown.Item>
 						<Link to={"/profile"}>Profile</Link>
 					</Dropdown.Item>
-					<Dropdown.Item>Settings</Dropdown.Item>
+					<Dropdown.Item>
+						<Link to={"/privacySettings"}>Settings</Link>
+					</Dropdown.Item>
 					<Dropdown.Divider />
 					<Dropdown.Item>Sign out</Dropdown.Item>
 				</Dropdown>
@@ -55,21 +61,21 @@ const Header = () => {
 				<Navbar.Link as={Link} to="/">
 					Home
 				</Navbar.Link>
-				<Navbar.Link as={Link} to="/videos">
+				{/* <Navbar.Link as={Link} to="/videos">
 					Videos
-				</Navbar.Link>
+				</Navbar.Link> */}
 				<Navbar.Link as={Link} to="/courses">
 					Courses
 				</Navbar.Link>
 				<Navbar.Link as={Link} to="/books">
 					Books
 				</Navbar.Link>
-				<Navbar.Link as={Link} to="/blogs">
+				{/* <Navbar.Link as={Link} to="/blogs">
 					Blogs
-				</Navbar.Link>
-				<Navbar.Link as={Link} to="/groups">
+				</Navbar.Link> */}
+				{/* <Navbar.Link as={Link} to="/groups">
 					Groups
-				</Navbar.Link>
+				</Navbar.Link> */}
 			</Navbar.Collapse>
 		</Navbar>
 	);
