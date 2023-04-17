@@ -1,5 +1,0 @@
-import ChatRoom from './ChatRoom/ChatRoom';
-    "react-carousel-slider": "^2.0.13",
-import SuggestedUsers from './SuggestedUsers/SuggestedUsers';
-            <ChatRoom></ChatRoom>
-        <SuggestedUsers></SuggestedUsers> 
