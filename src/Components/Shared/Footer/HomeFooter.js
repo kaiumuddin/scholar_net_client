@@ -3,7 +3,7 @@ import {Footer} from "flowbite-react";
 // import logo from "../../../Assets/iconImage/logo.png" ;
 const HomeFooter = () => {
   return (
-    <div className='container  mx-auto'>
+    <div className='container  mx-auto mb-2 '>
       <Footer className="shadow-none">
         <div className="w-full">
           <div className="grid w-full md:flex md:grid-cols-1">
@@ -15,7 +15,7 @@ const HomeFooter = () => {
                 name="SCHOLAR NET"
               />
             </div>
-            <div className="mx-auto grid gap-8 mt-4 grid-cols-3 ">
+            <div className="mx-auto grid gap-8 mt-4 grid-cols-3  ">
               <div>
                 <Footer.Title title="about" />
                 <Footer.LinkGroup col={true}>
@@ -59,7 +59,7 @@ const HomeFooter = () => {
               by="Copy right by Knight commandos team"
 
             />
-            <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+            <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center mx-2">
               <i className="fa-brands fa-facebook-f text-2xl text-green-600"></i>
               <i className="fa-brands fa-twitter text-2xl text-green-600"></i>
               <i className="fa-brands fa-instagram text-2xl text-green-600"></i>

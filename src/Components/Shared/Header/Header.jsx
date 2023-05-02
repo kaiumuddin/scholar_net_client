@@ -1,10 +1,18 @@
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 // import img from "../../../Assets/Images";
 import { RiMessengerLine } from "react-icons/ri";
+import { AuthProvider } from "../../../UserContext/UserContext";
+import { toast } from "react-toastify";
 
 const Header = () => {
+	const { logOutUser, setUser, user } = useContext(AuthProvider);
+	const logOut = () => {
+		logOutUser();
+		setUser({});
+		toast.info("You are account is logged out !!");
+	}
 	return (
 		<Navbar className="uppercase container max-w-screen-2xl mx-auto">
 			<div className="flex lg:hidden ">
@@ -26,34 +34,38 @@ const Header = () => {
 
 			<div className="flex justify-center items-center md:order-2">
 				<Link to={"/chat"} className="mx-3">
-					<RiMessengerLine className="h-8 w-8 text-gray-400"></RiMessengerLine>
+					<RiMessengerLine className="h-8 w-8 text-blue-400 me-16"></RiMessengerLine>
 				</Link>
-				<Dropdown
+			  {user.uid && 	<Dropdown
 					arrowIcon={false}
 					inline={true}
 					label={
 						<Avatar
 							alt="User settings"
-							img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+							img={user?.photoURL ?  user?.photoURL : "https://i.ibb.co/RSCmwXf/imagenot.jpg"}
 							rounded={true}
 						/>
 					}
 				>
 					<Dropdown.Header>
-						<span className="block text-sm">Bonnie Green</span>
-						<span className="block truncate text-sm font-medium">
-							name@flowbite.com
-						</span>
+					<div className="w-52">
+					<b style={{fontSize:"12px"}}>{user?.displayName}</b>
+						<br />
+						<b style={{fontSize:"12px"}}>
+							{user?.email}
+						</b>
+					</div>
 					</Dropdown.Header>
 					<Dropdown.Item>
-						<Link to={"/profile"}>Profile</Link>
+						<Link to={"/profile"}><i className="fa-solid fa-user mx-2 text-lg"></i>Profile</Link>
 					</Dropdown.Item>
 					<Dropdown.Item>
-						<Link to={"/privacySettings"}>Settings</Link>
+						<Link to={"/privacySettings"}><i className="fa-solid fa-gear mx-2 text-lg"></i> Settings </Link>
 					</Dropdown.Item>
 					<Dropdown.Divider />
-					<Dropdown.Item>Sign out</Dropdown.Item>
+					<Dropdown.Item onClick={() => logOut()}><i className="fa-solid fa-right-from-bracket text-lg mx-2"></i> Sign out</Dropdown.Item>
 				</Dropdown>
+				}
 				<Navbar.Toggle />
 			</div>
 
@@ -70,6 +82,19 @@ const Header = () => {
 				<Navbar.Link as={Link} to="/books">
 					Books
 				</Navbar.Link>
+
+				<>
+					{
+						!user.uid && <>
+							<Navbar.Link as={Link} to="/register">
+								Register
+							</Navbar.Link>
+							<Navbar.Link as={Link} to="/login">
+								Login
+							</Navbar.Link>
+						</>
+					}
+				</>
 				{/* <Navbar.Link as={Link} to="/blogs">
 					Blogs
 				</Navbar.Link> */}

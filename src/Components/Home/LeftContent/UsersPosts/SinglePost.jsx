@@ -1,348 +1,417 @@
-import React from "react";
-import { Card, Dropdown, Avatar, Textarea, Label } from "flowbite-react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Card, Dropdown, Avatar, Textarea, Label, Button } from "flowbite-react";
+import { NavLink, Navigate } from "react-router-dom";
 import like from "../../../../Assets/iconImage/like.png";
 import heart from "../../../../Assets/iconImage/heart.png";
 import sad from "../../../../Assets/iconImage/sad.png";
 import sad2 from "../../../../Assets/iconImage/sad2.png";
+import { toast } from 'react-toastify';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
-
-export default function SinglePost() {
+import { AuthProvider } from "../../../../UserContext/UserContext";
+export default function SinglePost({ data , refetch}) {
 	const [commentStatues, setCommentStatus] = useState(false);
 	const [showShareLink, setShowShareLink] = useState(false);
 	const [copyStatus, setCopyStatus] = useState(false);
+	const {user}= useContext(AuthProvider) ;
+	//delete project section
 
+	const deletePost = (id) => {
+		const confirm = window.confirm("Are you want to delete this post??") ;
+		if(confirm){
+		fetch(`https://scholar-net-subrota.vercel.app/delete-post?id=${id}&email=${user?.email}`, {
+			method: "DELETE",
+			headers: {
+				authorization: `Bearer ${localStorage.getItem("scholar-net")}`
+			}
+		})
+			.then(res => {
+				if (res.status === 403) {
+					toast.warning("  😩 😩 You do have not access to delete this data. 😩 😩 ");
+					return <Navigate to="/"></Navigate>
+				} else {
+					return res.json();
+				}
+				
+			})
+			.then(data => {
+	
+				if (data?.acknowledged > 0) {
+					toast.success("Your post  deleted successfully");
+					return refetch() ;
+				}
+			})
+			.catch(() => toast.error("Failed to delete!!"));
+		}else{
+			alert("Your data is safe:)") ;
+		}
+	}
+	//hide post 
+	const hidePost = (id) => {
+			const confirm = window.confirm("Are you want to hide this post??") ;
+			if(confirm){
+			fetch(`http://localhost:5000/hide-post/${id}`, {
+				method: "PUT",
+				headers: {
+					authorization: `Bearer ${localStorage.getItem("scholar-net")}`
+				}
+			})
+				.then(res => {
+					if (res.status === 403) {
+						toast.warning("  😩 😩 You do have not access to hide this data. 😩 😩 ");
+						return <Navigate to="/"></Navigate>
+					} else {
+						return res.json();
+					}
+					
+				})
+				.then(data => {
+		
+					if (data?.deletedCount > 0) {
+						toast.success("Your post  hide successfully");
+						return refetch() ;
+					}
+				})
+				.catch(() => toast.error("Failed to delete!!"));
+			}else{
+				alert("Your data is not hide now:)") ;
+			}
+		}
+	
 	return (
-		<div className="w-full mt-5 mb-3">
-			<Card className="shadow-none">
-				<div className="flex justify-between flex-col md:flex-row my-2">
-					<div className="flex font-bold  my-5">
-						<img
-							src="https://i.ibb.co/nfGfPs0/dipika.webp"
-							alt="user profile"
-							className="h-12 w-12 rounded-full border-2 border-green-500"
-						/>
-						<div className="flex flex-col mx-2">
-							<p className="text-lg text-blue-600">
-								{" "}
-								Susmita sen{" "}
-								<span className="text-gray-400 text-sm">
-									Create this post
-								</span>{" "}
-							</p>
-							<p className="text-md mt-1 mx-1 text-gray-400">
-								{" "}
-								<i className="fa-solid fa-globe"></i> Published
-								Sep, 12, 2022
-							</p>
-						</div>
-					</div>
-					<Dropdown inline={true} label="">
-						<Dropdown.Item>
-							<NavLink
-								to="/"
-								href="#"
-								className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-							>
-								<button
-									data-modal-target="EditPostModal"
-									data-modal-toggle="EditPostModal"
-								>
-									{" "}
-									<i className="fa-solid fa-pen-to-square mx-2"></i>{" "}
-									Edit post
-								</button>
-							</NavLink>
-						</Dropdown.Item>
-						<Dropdown.Item>
-							<NavLink
-								to="/"
-								href="#"
-								className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-							>
-								<span>
-									{" "}
-									<i className="fa-solid fa-trash-can mx-2"></i>{" "}
-									Delete post
-								</span>
-							</NavLink>
-						</Dropdown.Item>
+		<>
+		{
+			data.hide !== true &&
 
-						<Dropdown.Item>
-							<NavLink
-								to="/"
-								href="#"
-								className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-							>
-								<span>
-									{" "}
-									<i className="fa-solid fa-eye-slash mx-2"></i>{" "}
-									Hide post
-								</span>
-							</NavLink>
-						</Dropdown.Item>
+			<div className="w-full mt-5 mb-3">
+				<Card className="shadow-none">
+					<div className="flex justify-between flex-col md:flex-row my-2">
+						<div className="flex font-bold  my-5">
+							<img
+								src={data?.profile ? data?.profile : "https://i.ibb.co/RSCmwXf/imagenot.jpg"}
+								alt="user profile"
+								className="h-12 w-12 rounded-full border-2 border-green-500"
+							/>
+							<div className="flex flex-col mx-2">
+								<p className="text-lg text-blue-600">
 
-						<Dropdown.Item>
-							<NavLink
-								to="/"
-								href="#"
-								className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-							>
-								<button
-									data-modal-target="ReportModal"
-									data-modal-toggle="ReportModal"
-								>
-									{" "}
-									<i className="fa-solid fa-flag-checkered mx-2"></i>{" "}
-									Report post
-								</button>
-							</NavLink>
-						</Dropdown.Item>
-					</Dropdown>
-				</div>
+									{data?.name ? data?.nam : "name not found"}
+									<span className="text-gray-400 mx-2 text-sm">
+										Create this post
+									</span>
+								</p>
+								<p className="text-md mt-1 mx-1 text-gray-400">
 
-				<div className="flex flex-col items-center my-2 pb-2">
-					<img
-						className="mb-3 h-auto w-auto rounded-lg"
-						src="https://i.ibb.co/9qJF3hJ/study.jpg"
-						alt="Bonnie"
-					/>
-					<p className="mb-1 text-md  my-2 font-medium text-start text-gray-600">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					</p>
-
-					<p className="text-md text-gray-400 my-2">
-						Lorem ipsum, dolor sit amet consectetur adipisicing
-						elit. Eius magni totam, saepe a atque, porro laudantium
-						repellendus veniam ad minus ut optio facilis beatae nemo
-						vel! Odit suscipit commodi laudantium quaerat,
-						cupiditate dolore, accusamus ullam quibusdam eos impedit
-						aliquam adipisci!
-					</p>
-					<hr className="bg-gray-400 border w-full my-4 clear-both" />
-					<div className="flex justify-between flex-col md:flex-row">
-						<div>
-							<div className="grid md:grid-cols-2 lg:grid-cols-4 invisible	md:visible	 justify-around  my-10">
-								<div className="mx-4">
-									<i className="fa-solid fa-eye text-green-500"></i>{" "}
-									<p className="-mt-10 ms-5 text-sm text-gray-500">
-										560
-									</p>
-								</div>
-								<div className="mx-4">
-									{" "}
-									<i className="fa-regular fa-message text-green-500"></i>{" "}
-									<p className="-mt-10 ms-5 text-sm text-gray-500">
-										200
-									</p>
-								</div>
-								<div className="mx-4">
-									{" "}
-									<i className="fa-regular fa-star text-green-500"></i>{" "}
-									<p className="-mt-10 ms-5 text-sm text-gray-500">
-										230
-									</p>
-								</div>
-								<div className="mx-4">
-									{" "}
-									<i className="fa-solid fa-share-nodes text-green-500"></i>{" "}
-									<p className="-mt-10 ms-5 text-sm text-gray-500">
-										110
-									</p>
-								</div>
+									<i className="fa-solid fa-globe"></i>
+									<span className="mx-2">Published</span>
+									{data?.publishDate ? data?.publishDate : "00/00/00"}
+								</p>
 							</div>
-							<div className="mt-4 flex flex-col md:flex-row space-x-3 lg:mt-6">
-								<button className="flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
-									<div className="flex justify-around">
-										{" "}
-										<p>Like</p>{" "}
-										<i className="fa-regular fa-thumbs-up mx-2 text-lg mx-2 -mt-1"></i>{" "}
-									</div>
-								</button>
+						</div>
+						<Dropdown inline={true} className="-mt-0 md:-mt-16">
+						
+						{
+							data?.email ===  user?.email && <>
+								<Dropdown.Item>
+								<NavLink
+									to={`/edit-post/${data?._id}`}
+									className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+								>
+									<Button>
+										<i className="fa-solid fa-pen-to-square mx-2"></i>
+										Edit post
+									</Button>
+								</NavLink>
+							</Dropdown.Item>
+							<Dropdown.Item>
+								<NavLink
+									to="/"
+									href="#"
+									className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+								>
+									<Button onClick={() => deletePost(data?._id)}>
+										<span>
+											<i className="fa-solid fa-trash-can mx-2"></i>
+											Delete post
+										</span>
+									</Button>
+								</NavLink>
+							</Dropdown.Item>
+							<Dropdown.Item>
+								<NavLink
+									to="/"
+									href="#"
+									className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+								>
+									<Button onClick={() => hidePost(data?._id)}>
+										<span>
+											<i className="fa-solid fa-eye-slash mx-2"></i>
+											Hide post
+										</span>
+									</Button>
+								</NavLink>
+							</Dropdown.Item>
+							</>
+						}
 
-								<div>
+							<Dropdown.Item>
+								<NavLink
+									to="/"
+									href="#"
+									className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+								>
+									<Button
+										data-modal-target="ReportModal"
+										data-modal-toggle="ReportModal"
+									>
+
+										<i className="fa-solid fa-flag-checkered mx-2"></i>
+										Report post
+									</Button>
+								</NavLink>
+							</Dropdown.Item>
+						</Dropdown>
+					</div>
+
+					<div className="flex flex-col items-center my-2 pb-2">
+						<img
+							className="mb-3 h-auto w-auto rounded-lg"
+							src={data?.postImage ? data?.postImage : "https://i.ibb.co/RSCmwXf/imagenot.jpg"}
+							alt="Bonnie"
+						/>
+						<p className="mb-1 text-md  my-2 font-medium text-start text-gray-600">
+							{data?.title?.length > 100 ? data?.title?.slice(0, 100) + "..." : data?.title}
+						</p>
+
+						<p className="text-md text-gray-400 my-2">
+							{data?.description?.length > 250 ? data?.description?.slice(0, 250) + "..." : data?.description}
+						</p>
+						<hr className="bg-gray-400 border w-full my-4 clear-both" />
+						<div className="flex justify-between flex-col md:flex-row">
+							<div>
+								<div className="grid md:grid-cols-2 lg:grid-cols-4 invisible	md:visible	 justify-around  my-10">
+									<div className="mx-4">
+										<i className="fa-solid fa-eye text-green-500"></i>
+										<p className="-mt-10 ms-5 text-sm text-gray-500">
+											560
+										</p>
+									</div>
+									<div className="mx-4">
+
+										<i className="fa-regular fa-message text-green-500"></i>
+										<p className="-mt-10 ms-5 text-sm text-gray-500">
+											200
+										</p>
+									</div>
+									<div className="mx-4">
+
+										<i className="fa-regular fa-star text-green-500"></i>
+										<p className="-mt-10 ms-5 text-sm text-gray-500">
+											230
+										</p>
+									</div>
+									<div className="mx-4">
+
+										<i className="fa-solid fa-share-nodes text-green-500"></i>
+										<p className="-mt-10 ms-5 text-sm text-gray-500">
+											110
+										</p>
+									</div>
+								</div>
+								<div className="mt-4 flex flex-col md:flex-row space-x-3 lg:mt-6">
+									<button className="flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+										<div className="flex justify-around">
+
+											<p>Like</p>
+											<i className="fa-regular fa-thumbs-up  text-lg mx-2 -mt-1"></i>
+										</div>
+									</button>
+
+									<div>
+										<button
+											className="items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+											onClick={() =>
+												setCommentStatus(
+													commentStatues === false
+														? true
+														: false
+												)
+											}
+										>
+											<div className="flex py-1">
+
+												<p>Comment</p>
+												<i className="fa-solid fa-comment-dots mx-2 text-lg -mt-1"></i>
+											</div>
+										</button>
+									</div>
 									<button
-										className="items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+										className="inline-flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
 										onClick={() =>
-											setCommentStatus(
-												commentStatues === false
+											setShowShareLink(
+												showShareLink === false
 													? true
 													: false
 											)
 										}
 									>
-										<div className="flex py-1">
-											{" "}
-											<p>Comment</p>{" "}
-											<i className="fa-solid fa-comment-dots mx-2 text-lg -mt-1"></i>
-										</div>
+										<span>
+
+											Share
+											<i className="fa-solid fa-share-from-square  mx-2 text-lg"></i>
+										</span>
 									</button>
 								</div>
-								<button
-									className="inline-flex items-center my-2 rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-									onClick={() =>
-										setShowShareLink(
-											showShareLink === false
-												? true
-												: false
-										)
-									}
-								>
-									<span>
-										{" "}
-										Share{" "}
-										<i className="fa-solid fa-share-from-square  mx-2 text-lg"></i>
-									</span>
-								</button>
 							</div>
-						</div>
 
-						<div className="mx-8">
-							<div className=" -ms-5 md:ms-12 mt-8">
-								{" "}
-								Replay{" "}
-								<i className="fa-solid fa-reply-all mx-2 mb-12 text-lg"></i>
-							</div>
-							<div className="flex justify-center">
-								<div className="hover:cursor-pointer">
-									<React.Fragment>
-										<div className="flex justify-between ms-7 -mt-8 hidden md:block">
-											<Avatar.Group>
-												<Avatar
-													img={like}
-													rounded={true}
-												/>
-												<Avatar
-													img={heart}
-													rounded={true}
-												/>
-												<Avatar
-													img={sad}
-													rounded={true}
-												/>
-												<Avatar
-													img={sad2}
-													rounded={true}
-												/>
-											</Avatar.Group>
-										</div>
-									</React.Fragment>
-								</div>
-								<p className="mx-3 -mt-5 text-gray-600">
-									{" "}
-									30+{" "}
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				{/* write comment and show comments  */}
-				{commentStatues && (
-					<div className="commentSection -mt-5">
-						<form>
-							<div id="textarea">
-								<div className="mb-2 block">
-									<Label htmlFor="comment" />
-								</div>
-								<Textarea
-									id="comment"
-									placeholder="Write your comment here."
-									className="p-4 bg-white"
-									required={true}
-									rows={3}
-								/>
-								<button className="text-white bg-gradient-to-r  ps-3  mt-5 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-teal-500/50 dark:dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 pb-2 text-center mr-2 mb-5">
-									{" "}
-									Send comment{" "}
-									<i className="fa-solid fa-paper-plane mx-2 text-white text-lg"></i>{" "}
-								</button>
-							</div>
-						</form>
+							<div className="mx-8">
+								<div className=" -ms-5 md:ms-12 mt-8">
 
-						{/* show comment  */}
-						<>
-							{[0, 1, 2, 3].map((index) => (
-								<div key={index} className="mt-6 mb-10">
-									<div className="flex font-bold  my-5">
-										<img
-											src="https://i.ibb.co/q7MNxRK/g3.jpg"
-											alt="user profile"
-											className="h-10 w-11 rounded-full border-2 border-green-500"
-										/>
-										<div className="flex flex-col mx-2">
-											<p className="text-lg text-blue-600">
-												{" "}
-												Linda smith{" "}
-												<span className="text-gray-400 text-sm -mt-2">
-													post date: 04/03/2023
-												</span>{" "}
-											</p>
-										</div>
+									Replay
+									<i className="fa-solid fa-reply-all mx-2 mb-12 text-lg"></i>
+								</div>
+								<div className="flex justify-center">
+									<div className="hover:cursor-pointer">
+										<React.Fragment>
+											<div className="flex justify-between ms-7 -mt-8 sm:hidden md:block">
+												<Avatar.Group>
+													<Avatar
+														img={like}
+														rounded={true}
+													/>
+													<Avatar
+														img={heart}
+														rounded={true}
+													/>
+													<Avatar
+														img={sad}
+														rounded={true}
+													/>
+													<Avatar
+														img={sad2}
+														rounded={true}
+													/>
+												</Avatar.Group>
+											</div>
+										</React.Fragment>
 									</div>
+									<p className="mx-3 -mt-5 text-gray-600">
 
-									<p className="comment text-sm text-gray-400 w-86">
-										This is a nich planning I think we
-										should to obey this. This is a nich
-										planning I think we should to obey this.
-										This is a nich planning I think we
-										should to obey this. This is a nich
-										planning I think we should to obey this.
-										This is a nich planning I think we
-										should to obey this.
+										30+
 									</p>
-									<div className=" -ms-5 md:ms-12  float-right hover:cursor-pointer mb-5">
-										<i className="fa-solid fa-heart mx-2 mb-12 text-lg text-green-600"></i>
-										<i className="fa-solid fa-reply-all mx-2 mb-12 text-lg text-green-600"></i>
-									</div>
 								</div>
-							))}
-						</>
+							</div>
+						</div>
 					</div>
-				)}
-				{/* show share link  */}
-				<>
-					{showShareLink && (
-						<>
-							{" "}
-							{
-								<div className="-mt-5">
-									<CopyToClipboard
-										text={`${" https://flowbite.com/docs/forms/toggle/#disabled-state"}`}
-									>
-										<p
-											onClick={() => setCopyStatus(true)}
-											className="hover:cursor-pointer mb-2"
-										>
-											{copyStatus ? (
-												<p className="text-green-600 text-md">
-													{" "}
-													Copied !!
+					{/* write comment and show comments  */}
+					{commentStatues && (
+						<div className="commentSection -mt-5">
+							<form>
+								<div id="textarea">
+									<div className="mb-2 block">
+										<Label htmlFor="comment" />
+									</div>
+									<Textarea
+										id="comment"
+										placeholder="Write your comment here."
+										className="p-4 bg-white"
+										required={true}
+										rows={3}
+									/>
+									<button className="text-white bg-gradient-to-r   mt-5 from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 shadow-teal-500/50 dark:dark:shadow-teal-800/80 font-medium rounded-full text-sm ps-2 px-2 py-1 pb-2 text-center mr-2 mb-5">
+
+										Send comment
+										<i className="fa-solid fa-paper-plane mx-2 text-white text-lg"></i>
+									</button>
+								</div>
+							</form>
+
+							{/* show comment  */}
+							<>
+								{[0, 1, 2, 3].map((index) => (
+									<div key={index} className="mt-6 mb-10">
+										<div className="flex font-bold  my-5">
+											<img
+												src="https://i.ibb.co/q7MNxRK/g3.jpg"
+												alt="user profile"
+												className="h-10 w-11 rounded-full border-2 border-green-500"
+											/>
+											<div className="flex flex-col mx-2">
+												<p className="text-lg text-blue-600">
+
+													Linda smith
+													<span className="text-gray-400 text-sm -mt-2">
+														post date: {data?.date ? data?.date : "00/00/00"}
+													</span>
 												</p>
-											) : (
-												<i className="fa-regular fa-copy text-2xl text-green-600"></i>
-											)}
+											</div>
+										</div>
+
+										<p className="comment text-sm text-gray-400 w-86">
+											This is a nich planning I think we
+											should to obey this. This is a nich
+											planning I think we should to obey this.
+											This is a nich planning I think we
+											should to obey this. This is a nich
+											planning I think we should to obey this.
+											This is a nich planning I think we
+											should to obey this.
 										</p>
-									</CopyToClipboard>
-									<a
-										href="https://flowbite.com/docs/forms/toggle/#disabled-state"
-										className="text-blue-400 text-md"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										https://flowbite.com/docs/forms/toggle/#disabled-state
-									</a>
-									<p className="my-3 text-gray-400 font-bold text-lg">
-										{" "}
-										Copy this link to share with your
-										friends.
-									</p>
-								</div>
-							}
-						</>
+										<div className=" -ms-5 md:ms-12  float-right hover:cursor-pointer mb-5">
+											<i className="fa-solid fa-heart mx-2 mb-12 text-lg text-green-600"></i>
+											<i className="fa-solid fa-reply-all mx-2 mb-12 text-lg text-green-600"></i>
+										</div>
+									</div>
+								))}
+							</>
+						</div>
 					)}
-				</>
-			</Card>
-		</div>
+					{/* show share link  */}
+					<>
+						{showShareLink && (
+							<>
+
+								{
+									<div className="-mt-5">
+										<CopyToClipboard
+											text={`${" https://flowbite.com/docs/forms/toggle/#disabled-state"}`}
+										>
+											<p
+												onClick={() => setCopyStatus(true)}
+												className="hover:cursor-pointer mb-2"
+											>
+												{copyStatus ? (
+													<p className="text-green-600 text-md">
+
+														Copied !!
+													</p>
+												) : (
+													<i className="fa-regular fa-copy text-2xl text-green-600"></i>
+												)}
+											</p>
+										</CopyToClipboard>
+										<a
+											href="https://flowbite.com/docs/forms/toggle/#disabled-state"
+											className="text-blue-400 text-md"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											https://flowbite.com/docs/forms/toggle/#disabled-state
+										</a>
+										<p className="my-3 text-gray-400 font-bold text-lg">
+
+											Copy this link to share with your
+											friends.
+										</p>
+									</div>
+								}
+							</>
+						)}
+					</>
+				</Card>
+			</div>
+
+							}
+		</>
 	);
 }

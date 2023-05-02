@@ -2,10 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UserContext from './UserContext/UserContext';
+import {QueryClient,QueryClientProvider} from '@tanstack/react-query'
+
+// Create a client
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
+    <UserContext>
+    <QueryClientProvider client={queryClient}>
     <App />
+    </QueryClientProvider>
+    </UserContext>
 );
 
 // If you want to start measuring performance in your app, pass a function

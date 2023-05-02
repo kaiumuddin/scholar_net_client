@@ -9,9 +9,12 @@ import Blogs from "../Components/Blogs/Blogs/Blogs";
 import Groups from "../Components/Groups/Groups/Groups";
 import PrivacySettings from "../Components/Profile/PrivacySettings/PrivacySettings";
 import Profile from "../Components/Profile/Profile/Profile";
-import SignUp from "../Components/Register/SignUp/SignUp";
-import Login from "../Components/Register/Login/Login";
+
 import ChatHomePage from "../Components/Chat/ChatHomePage";
+import Register from "../Components/Pages/Register/Register";
+import Login from "../Components/Pages/Login/Login";
+import ResetPassword from "../Components/Pages/ResetPassword/ResetPassword";
+import EditPost from "../Components/Home/LeftContent/Modals/EditPost/EditPost";
 
 const router = createBrowserRouter([
 	{
@@ -60,16 +63,29 @@ const router = createBrowserRouter([
 						element: <PrivacySettings></PrivacySettings>,
 					},
 					{
-						path: "/signup",
-						element: <SignUp></SignUp>,
+						path: "/register",
+						element: <Register></Register>
 					},
 					{
 						path: "/login",
-						element: <Login></Login>,
+						element: <Login></Login>
 					},
 					{
 						path: "/chat",
 						element: <ChatHomePage></ChatHomePage>,
+					},
+					{
+						path: "/reset-password", element: <ResetPassword></ResetPassword>
+					},
+					{
+						path: "/edit-post/:id",
+						loader: async ({  params }) => 
+							 fetch(`https://scholar-net-subrota.vercel.app/edit-posts/${params.id}`)
+								.then((res) => res.json())
+								.then(data => data)
+						
+						,
+						element: <EditPost></EditPost>
 					},
 					{
 						path: "*",

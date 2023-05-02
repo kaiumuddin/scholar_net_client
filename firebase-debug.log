@@ -1,0 +1,30 @@
+[debug] [2023-05-02T09:59:20.848Z] ----------------------------------------------------------------------
+[debug] [2023-05-02T09:59:20.850Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-02T09:59:20.850Z] CLI Version:   11.25.3
+[debug] [2023-05-02T09:59:20.851Z] Platform:      win32
+[debug] [2023-05-02T09:59:20.851Z] Node Version:  v18.6.0
+[debug] [2023-05-02T09:59:20.852Z] Time:          Tue May 02 2023 15:59:20 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-05-02T09:59:20.852Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-02T09:59:20.946Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-02T09:59:20.947Z] > authorizing via signed-in user (knight.commandos.602.3@gmail.com)
+[debug] [2023-05-02T09:59:20.947Z] [iam] checking project scholarnet-2a9fe for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-02T09:59:20.950Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/scholarnet-2a9fe:testIamPermissions [none]
+[debug] [2023-05-02T09:59:20.951Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/scholarnet-2a9fe:testIamPermissions x-goog-quota-user=projects/scholarnet-2a9fe
+[debug] [2023-05-02T09:59:20.951Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/scholarnet-2a9fe:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-02T09:59:22.839Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/scholarnet-2a9fe:testIamPermissions 200
+[debug] [2023-05-02T09:59:22.840Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/scholarnet-2a9fe:testIamPermissions {}
+[debug] [2023-05-02T09:59:22.841Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project scholarnet-2a9fe:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-05-02T09:59:22.843Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/scholarnet-2a9fe [none]
+[debug] [2023-05-02T09:59:23.751Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/scholarnet-2a9fe 403
+[debug] [2023-05-02T09:59:23.752Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/scholarnet-2a9fe {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-05-02T09:59:23.755Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-05-02T09:59:24.076Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\sc\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\sc\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project scholarnet-2a9fe. Please make sure the project exists and your account has permission to access it.

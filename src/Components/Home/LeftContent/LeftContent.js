@@ -1,6 +1,6 @@
 import React from 'react';
 import CreateNewPost from './CreateNewPost/CreateNewPost';
-import RecentStories from './RecentStories/RecentStories';
+// import RecentStories from './RecentStories/RecentStories';
 import SuggestedUsers from './SuggestedUsers/SuggestedUsers';
 import UsersPosts from './UsersPosts/UsersPosts';
 const LeftContent = () => {
