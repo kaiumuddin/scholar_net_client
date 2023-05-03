@@ -10,15 +10,15 @@ import { TextInput, Label, Textarea, FileInput, Button } from "flowbite-react";
 import ButtonLoader from "../../../../Shared/ButtonLoader/ButtonLoader"
 import { AuthProvider } from '../../../../../UserContext/UserContext';
 const PostModal = () => {
-  
+
     const [postImage, setPostImage] = useState({});
     //navigate user 
     const navigate = useNavigate();
     //get form data 
-    const { register, handleSubmit, formState: { errors }, reset} = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     //user info
     const { user } = useContext(AuthProvider);
-   //
+    //
     const [loading, setLoading] = useState(false);
     //on drop image callback 
     const onDrop = useCallback(acceptedFiles => {
@@ -45,8 +45,8 @@ const PostModal = () => {
         fetch(`https://api.imgbb.com/1/upload?key=${image_bb_key}`, {
             method: "POST",
             body: formData,
-              }).then(res => res.json())
-             .then(postImageUrl => {
+        }).then(res => res.json())
+            .then(postImageUrl => {
                 const postImage = postImageUrl?.data?.url;
                 const date = format(new Date(), "PP");
                 const time = new Date().toLocaleTimeString();
@@ -80,8 +80,8 @@ const PostModal = () => {
                         if (data.acknowledged) {
                             toast.success("Great job you add a post successfully  😀 😀 ");
                             setLoading(false);
-                            reset() ;
-                            setPostImage({}) ;
+                            reset();
+                            setPostImage({});
 
                         }
                         if (data.categoryExisted) {
@@ -95,7 +95,7 @@ const PostModal = () => {
     return (
 
         <>
-    
+
             {/* <!-- Main modal --> */}
             <div id="PostModal" tabIndex="-1" aria-hidden="true" className="fixed hidden top-0 left-0 right-0 z-50  w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
                 <div className="relative w-full h-full max-w-2xl md:h-auto">

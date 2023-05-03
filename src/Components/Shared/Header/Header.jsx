@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { RiMessengerLine } from "react-icons/ri";
 import { AuthProvider } from "../../../UserContext/UserContext";
 import { toast } from "react-toastify";
+import DarkModeToggle from "./DarkMode/DarkModeToggle";
 
 const Header = () => {
 	const { logOutUser, setUser, user } = useContext(AuthProvider);
@@ -32,29 +33,30 @@ const Header = () => {
 				</div>
 			</Navbar.Brand>
 
+
 			<div className="flex justify-center items-center md:order-2">
 				<Link to={"/chat"} className="mx-3">
 					<RiMessengerLine className="h-8 w-8 text-blue-400 me-16"></RiMessengerLine>
 				</Link>
-			  {user.uid && 	<Dropdown
+				{user.uid && <Dropdown
 					arrowIcon={false}
 					inline={true}
 					label={
 						<Avatar
 							alt="User settings"
-							img={user?.photoURL ?  user?.photoURL : "https://i.ibb.co/RSCmwXf/imagenot.jpg"}
+							img={user?.photoURL ? user?.photoURL : "https://i.ibb.co/RSCmwXf/imagenot.jpg"}
 							rounded={true}
 						/>
 					}
 				>
 					<Dropdown.Header>
-					<div className="w-52">
-					<b style={{fontSize:"12px"}}>{user?.displayName}</b>
-						<br />
-						<b style={{fontSize:"12px"}}>
-							{user?.email}
-						</b>
-					</div>
+						<div className="w-52">
+							<b style={{ fontSize: "12px" }}>{user?.displayName}</b>
+							<br />
+							<b style={{ fontSize: "12px" }}>
+								{user?.email}
+							</b>
+						</div>
 					</Dropdown.Header>
 					<Dropdown.Item>
 						<Link to={"/profile"}><i className="fa-solid fa-user mx-2 text-lg"></i>Profile</Link>
@@ -82,7 +84,9 @@ const Header = () => {
 				<Navbar.Link as={Link} to="/books">
 					Books
 				</Navbar.Link>
-
+				<Navbar.Link>
+				<DarkModeToggle className="float-left"></DarkModeToggle>
+				</Navbar.Link>
 				<>
 					{
 						!user.uid && <>

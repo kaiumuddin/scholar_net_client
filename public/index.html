@@ -62,6 +62,8 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
+
+
     <!-- Start of LiveChat (www.livechat.com) code -->
 <script>
   window.__lc = window.__lc || {};
@@ -72,7 +74,15 @@
 <!-- End of LiveChat code -->
 
 
-
+<script>
+  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+  } else {
+      document.documentElement.classList.remove('dark')
+  }
+</script>
+<script src="js/darkmode.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 

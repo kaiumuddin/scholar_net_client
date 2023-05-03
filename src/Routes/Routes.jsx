@@ -10,11 +10,12 @@ import Groups from "../Components/Groups/Groups/Groups";
 import PrivacySettings from "../Components/Profile/PrivacySettings/PrivacySettings";
 import Profile from "../Components/Profile/Profile/Profile";
 
-import ChatHomePage from "../Components/Chat/ChatHomePage";
+// import ChatHomePage from "../Components/Chat/ChatHomePage";
 import Register from "../Components/Pages/Register/Register";
 import Login from "../Components/Pages/Login/Login";
 import ResetPassword from "../Components/Pages/ResetPassword/ResetPassword";
 import EditPost from "../Components/Home/LeftContent/Modals/EditPost/EditPost";
+import MainPage from "../Components/Pages/ChatHome/MainPage";
 
 const router = createBrowserRouter([
 	{
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
 					},
 					{
 						path: "/chat",
-						element: <ChatHomePage></ChatHomePage>,
+						element: <MainPage></MainPage>,
 					},
 					{
 						path: "/reset-password", element: <ResetPassword></ResetPassword>

@@ -4,7 +4,7 @@ import { FaQuestionCircle } from "react-icons/fa";
 const AskQuestion = () => {
     return (
         <div className='mb-10'>
-            <div className='p-5 border-gray-300 bg-gray-50 rounded-md border'>
+            <div className='p-5 border-gray-300 card rounded-md border'>
                 <p className='font-semibold text-gray-600 pb-5 text-xl'>Ask Research Question?</p>
                 <div className='flex gap-4 items-center'>
                     <div>
